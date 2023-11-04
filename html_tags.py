@@ -43,16 +43,12 @@ def verif_chevrons(chaine):
       closing_rafters_counter += 1
 
     if (last_rafter == "<" and char == "<"): return False
-
-    if (char == "<"):
-      last_rafter = char
-    elif (last_rafter ==  ">"):
-      last_rafter = char
+    last_rafter = char
 
   if opening_rafters_counter != closing_rafters_counter: return False
-
-
+  
   return True
+  
 
 
 def verif_tags(liste):
@@ -66,6 +62,7 @@ def verif_tags(liste):
         return False
       # Vérifie si la balise fermante correspond à la dernière balise ouverte
       # Ici on vérifie pour le dernier élément ajouté a la variable stack le charactère d'index 1 jusqu'à la fin, est égale a la chaine entre le caractère 2 (pour éviter le "/") jusqu'à la fin
+
       if pile[-1][1:] == tag[2:]:
         # Retire la balise ouverte de la pile
         pile.pop()
