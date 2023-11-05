@@ -1,3 +1,7 @@
+# GROUPE/ Yanis MARTIN, Alexis, Achille
+
+
+# Fonction fais par Achille
 def ouvrir(nom_fichier):
     try:
         # Ouverture du fichier en lecture seulement
@@ -24,14 +28,13 @@ def ouvrir(nom_fichier):
                 inside_tag = False
             elif inside_tag:
                 tag += char
-        print(tags)
         return contenu, tags
 
     except FileNotFoundError:
         # Gestion de l'erreur si le fichier n'est pas trouvé
         return "Le fichier spécifié est introuvable.", None
 
-
+# Fonctionfais par Yanis
 def verif_chevrons(chaine):
     opening_rafters_counter = 0
     closing_rafters_counter = 0
@@ -52,11 +55,10 @@ def verif_chevrons(chaine):
 
     return True
 
-
+# Fonction fais par Alexis
 def verif_tags(liste):
     pile = []  # Utilisation d'une pile pour suivre l'ordre des balises ouvertes
     for tag in liste:
-        print(tag)
         if tag[1] != '/':  # Si la balise n'est pas une balise de fermeture
             pile.append(tag)  # Ajoute la balise à la pile
         else:
@@ -75,7 +77,7 @@ def verif_tags(liste):
     # La structure est correcte si la pile est vide à la fin
     return len(pile) == 0
 
-
+#Fonction fais par Yanis
 def test_html(nom_fic):
     contenu, tags = ouvrir(nom_fic)
     chevrons = ""
@@ -94,3 +96,8 @@ def test_html(nom_fic):
 
 
 print(test_html("/Users/achillebosc-pro/Documents/NSI/index.html"))
+
+
+
+
+# Commentaires et combinaison du code (renomer les variables) pour une meilleurs lisibilité du code fais par Achille
